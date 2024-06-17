@@ -1,0 +1,10 @@
+FROM ggml-model-Q4_K_M.gguf
+
+TEMPLATE """[INST] {{ if and .First .System }}<<SYS>>{{ .System }}<</SYS>>
+
+{{ end }}{{ .Prompt }} [/INST] """
+SYSTEM """"""
+PARAMETER stop [INST]
+PARAMETER stop [/INST]
+PARAMETER stop <<SYS>>
+PARAMETER stop <</SYS>>
