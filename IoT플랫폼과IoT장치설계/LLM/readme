@@ -1,0 +1,26 @@
+IoT플랫폼과Iot장치설계 수업에서 진행했던 프로젝트입니다.
+OLLAMA 를 활용해서 LLM 모델 사용해보는 프로젝트입니다.
+
+환경은 Window10, 사용언어는 Python 입니다.
+
+먼저 이를 사용하기위해 OLLAMA for window 버전으로 설치하시고
+
+Modelfile 이라는 파일이있는 폴더에 다운받은 모델을 이동시켜야합니다( 해당모델은 4기가이상의 파일이라서 용량문제로 따로 다운로드 받아 해당폴더에 위치시켜야합니다.)
+
+https://huggingface.co/heegyu/EEVE-Korean-Instruct-10.8B-v1.0-GGUF/tree/main 해당링크에서 ggml-model-Q4_K_M.gguf 모델을 다운받아 사용했습니다.
+혹여 다른 모델파일로 사용시 Modelfile 파일을 메모장 혹은 사용하는 edit프로그램을 통해 1번줄에있는 파일명 부분을 해당파일로 변경해주시면됩니다.
+
+Modelfile 파일수정과 GGUF 파일 다운이 모두끝났다면
+CMD 에 들어가 해당폴더로 cd 시켜주고 ollama list 를 타이핑해서 ollama가 실행중인지 확인해주세요
+처음엔 등록한 모델이없어서 list에 이름과 아이디 사이즈 등의 영문만 떠있고 내용은없을겁니다.
+
+그뒤 "ollama create '등록하고싶은 이름' -f Modelfile('Modelfile이 위치한경로')" 를 입력하시면 해당 모델이 등록이될거고 
+ollama list로 정상적으로 설치되었는지 확인해주세요.
+
+잘설치되었다면 하위폴더에 있는 코드들을 cmd창에서 
+python 파일명.확장자 
+로 실행시키면되는데 실행전 파이썬 파일들의 내용중
+# model
+llm = Ollama(model="test_gguf:latest")
+해당 내용이있습니다
+model ="(ollama create에서 등록한 이름)"으로 변경후 해당 코드를 실행시키면 해당 파일에 등록된 질문들에대해서 출력이됩니다.
