@@ -1,0 +1,6 @@
+best.pt : 학습한 모델중 최적모델
+face.v1.yolo8.zip : 얼굴 이미지 압축파일입니다
+face_camera.py : 얼굴감지시 카메라에서 테두리에 표시해주는 프로그램입니다.
+face_model_make.py : 이미지를 학습시킨느 코드입니다.
+
+이미지 출처 :https://universe.roboflow.com/yolo8-hoegp/222-awdcr-zpryi
