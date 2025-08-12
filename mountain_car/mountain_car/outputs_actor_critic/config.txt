@@ -1,0 +1,7 @@
+reward += 10 * abs(next_state[1])  # reward shaping
+
+max_episodes=2000, seed=42
+
+ # Actor
+	entropy = -torch.sum(probs * torch.log(probs + 1e-10))
+	actor_loss = -log_prob * td_error.detach() - 0.05 * entropy
