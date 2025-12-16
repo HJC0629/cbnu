@@ -1,0 +1,37 @@
+CNN 기반 주조 제품 결함 탐지 (Smart Factory AI)
+1. 프로젝트 개요 제조업 생산 라인에서 발생하는 주조 제품(Casting Product)의 결함을 AI로 자동 탐지하는 프로젝트입니다. 기존의 육안 검사 방식을 보완하기 위해 컴퓨터 비전(CNN) 기술을 활용하였으며, 제품 이미지를 분석하여 정상(OK)과 불량(Defective)을 판별합니다.
+
+2. 사용 기술
+
+Language: Python 3.10
+
+Framework: TensorFlow, Keras
+
+Data Processing: Pandas, Numpy
+
+Visualization: Matplotlib
+
+3. 데이터셋
+
+데이터: Kaggle - Casting Product Image Data for Quality Inspection
+
+이미지 규격: 300x300 픽셀, 회색조(Grayscale)
+
+라벨 구성:
+
+def_front: 불량품 (결함 포함)
+
+ok_front: 정상품
+
+
+casting_defect_project/
+├── casting_data/                # 데이터셋 (train, test)
+├── casting_defect_main.py       # 모델 학습 및 성능 평가 실행 파일
+├── predict.py                   # 단일 이미지 불량 판별 실행 파일
+├── casting_inspection_model.h5  # 학습된 모델 파일
+├── training_result_graph.png    # 학습 결과 그래프
+└── README.md                    # 프로젝트 설명
+
+
+python casting_defect_main.py
+python predict.py
