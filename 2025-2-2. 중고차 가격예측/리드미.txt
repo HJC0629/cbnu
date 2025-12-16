@@ -1,0 +1,37 @@
+# 딥러닝 기반 중고차 가격 예측 (Regression)
+
+**1. 프로젝트 개요**
+중고차의 다양한 스펙(연식, 주행거리, 연료, 변속기 등)을 분석하여 적정 중고 거래 가격을 예측하는 AI 모델입니다.
+인도의 중고차 데이터셋(Cardekho)을 사용하였으며, 사용자의 편의를 위해 한국 원화(KRW) 단위로 입력 및 출력이 가능하도록 변환 로직을 구현했습니다.
+단순한 예측을 넘어, 신차 가격 대비 감가율을 계산하여 사용자에게 직관적인 정보를 제공합니다.
+
+**2. 프로젝트 구조**
+```bash
+car_price_prediction/
+├── car data.csv               # 원본 데이터셋 (Kaggle)
+├── car_price_prediction.py    # [Train] 데이터 전처리 및 모델 학습 실행
+├── predict_car_price.py       # [Run] 사용자 입력 기반 가격 예측 서비스
+├── car_price_model.h5         # 학습된 딥러닝 모델 파일
+├── car_preprocessor.pkl       # 데이터 전처리기 (Scaling/Encoding)
+├── real_car_price_result.png  # 학습 결과 그래프 (Loss)
+└── README.md                  # 프로젝트 설명서
+
+3. 사용 기술
+
+Language: Python 3.10
+
+Framework: TensorFlow, Keras
+
+Libraries: Pandas, Scikit-learn, Joblib, Matplotlib
+
+4. 데이터셋
+
+출처: Kaggle - Vehicle Dataset from Cardekho
+
+특징: 범주형 데이터(Fuel_Type, Seller_Type 등)와 수치형 데이터(Year, Kms_Driven 등)가 혼합된 정형 데이터
+
+전처리:
+
+범주형 변수: One-Hot Encoding 적용
+
+수치형 변수: Standard Scaling 적용
